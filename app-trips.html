@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trips • FleetSync Driver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body class="app-body">
+    <!-- Top Navigation Bar -->
+    <nav class="app-nav">
+        <div class="nav-left">
+            <button class="nav-btn" id="menuBtn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="nav-title">
+                <h1>Trips & Routes</h1>
+                <p class="nav-subtitle">Today: 3 trips • 187 km</p>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn">
+                <i class="fas fa-filter"></i>
+            </button>
+            <button class="nav-btn">
+                <i class="fas fa-calendar-alt"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main App Content -->
+    <main class="app-content">
+        <!-- Today's Summary -->
+        <div class="card summary-card">
+            <div class="summary-stats">
+                <div class="summary-stat">
+                    <div class="stat-value">187</div>
+                    <div class="stat-label">Total km</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="stat-value">5h 42m</div>
+                    <div class="stat-label">Drive time</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="stat-value">142</div>
+                    <div class="stat-label">Avg score</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="stat-value">87 L</div>
+                    <div class="stat-label">Fuel used</div>
+                </div>
+            </div>
+            
+            <div class="summary-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    New Trip
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-history"></i>
+                    History
+                </button>
+            </div>
+        </div>
+
+        <!-- Current/Next Trip -->
+        <div class="card current-trip-card">
+            <div class="card-header">
+                <h2>Next Scheduled Trip</h2>
+                <div class="trip-status scheduled">Scheduled</div>
+            </div>
+            
+            <div class="trip-preview">
+                <div class="trip-route">
+                    <div class="route-point">
+                        <div class="point-marker start"></div>
+                        <div class="point-details">
+                            <h4>Algiers Central Depot</h4>
+                            <p>Departure: 14:30 (30 min)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="route-line">
+                        <div class="line-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="line-distance">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>58 km • ~1h 10m</span>
+                        </div>
+                    </div>
+                    
+                    <div class="route-point">
+                        <div class="point-marker end"></div>
+                        <div class="point-details">
+                            <h4>Boumerdès Warehouse</h4>
+                            <p>ETA: 15:40</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trip-info">
+                    <div class="info-item">
+                        <i class="fas fa-box"></i>
+                        <span>Cargo: Electronics (12 boxes)</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Client: TechImport DZ</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Priority: High</span>
+                    </div>
+                </div>
+                
+                <div class="trip-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-play-circle"></i>
+                        Start When Ready
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-directions"></i>
+                        Preview Route
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Trips -->
+        <div class="card recent-trips-card">
+            <div class="card-header">
+                <h2>Today's Trips</h2>
+                <a href="#" class="view-details">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="trips-list">
+                <!-- Trip 1 -->
+                <div class="trip-item completed">
+                    <div class="trip-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="trip-details">
+                        <h4>Trip #TR-8921</h4>
+                        <p>Port of Algiers → Dar El Beida Warehouse</p>
+                        <div class="trip-meta">
+                            <span><i class="fas fa-route"></i> 42 km</span>
+                            <span><i class="fas fa-clock"></i> 1h 15m</span>
+                            <span><i class="fas fa-star"></i> 94 score</span>
+                        </div>
+                    </div>
+                    <div class="trip-time">
+                        <div class="time">08:30 - 09:45</div>
+                        <div class="status-badge completed">Completed</div>
+                    </div>
+                </div>
+                
+                <!-- Trip 2 -->
+                <div class="trip-item completed">
+                    <div class="trip-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="trip-details">
+                        <h4>Trip #TR-8922</h4>
+                        <p>Dar El Beida → Bab Ezzouar Commercial</p>
+                        <div class="trip-meta">
+                            <span><i class="fas fa-route"></i> 27 km</span>
+                            <span><i class="fas fa-clock"></i> 48m</span>
+                            <span><i class="fas fa-star"></i> 89 score</span>
+                        </div>
+                    </div>
+                    <div class="trip-time">
+                        <div class="time">10:15 - 11:03</div>
+                        <div class="status-badge completed">Completed</div>
+                    </div>
+                </div>
+                
+                <!-- Trip 3 -->
+                <div class="trip-item in-progress">
+                    <div class="trip-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="trip-details">
+                        <h4>Trip #TR-8923</h4>
+                        <p>Bab Ezzouar → Hussein Dey District</p>
+                        <div class="trip-meta">
+                            <span><i class="fas fa-route"></i> 68 km</span>
+                            <span><i class="fas fa-clock"></i> 1h 42m</span>
+                            <span><i class="fas fa-star"></i> 92 score (live)</span>
+                        </div>
+                    </div>
+                    <div class="trip-time">
+                        <div class="time">11:30 - 13:12</div>
+                        <div class="status-badge in-progress">In Progress</div>
+                    </div>
+                </div>
+                
+                <!-- Trip 4 -->
+                <div class="trip-item upcoming">
+                    <div class="trip-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="trip-details">
+                        <h4>Trip #TR-8924</h4>
+                        <p>Hussein Dey → Algiers Central Depot</p>
+                        <div class="trip-meta">
+                            <span><i class="fas fa-route"></i> 50 km</span>
+                            <span><i class="fas fa-clock"></i> ~1h 20m</span>
+                            <span><i class="fas fa-exclamation"></i> Returns</span>
+                        </div>
+                    </div>
+                    <div class="trip-time">
+                        <div class="time">13:45 - 15:05</div>
+                        <div class="status-badge upcoming">Upcoming</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Route Suggestions -->
+        <div class="card route-suggestions-card">
+            <div class="card-header">
+                <h2>Route Suggestions</h2>
+                <a href="#" class="view-details">
+                    <i class="fas fa-sync"></i>
+                    Refresh
+                </a>
+            </div>
+            
+            <div class="route-options">
+                <div class="route-option optimal">
+                    <div class="route-header">
+                        <h4><i class="fas fa-bolt"></i> Optimal Route</h4>
+                        <div class="route-time">58 min</div>
+                    </div>
+                    <p>Via A1 Highway • Least traffic • 2 tolls</p>
+                    <div class="route-details">
+                        <span><i class="fas fa-road"></i> 47.2 km</span>
+                        <span><i class="fas fa-gas-pump"></i> ~18.9 L</span>
+                        <span><i class="fas fa-traffic-light"></i> Light traffic</span>
+                    </div>
+                    <button class="btn btn-primary btn-small">
+                        <i class="fas fa-check"></i>
+                        Select This Route
+                    </button>
+                </div>
+                
+                <div class="route-option alternative">
+                    <div class="route-header">
+                        <h4><i class="fas fa-leaf"></i> Eco Route</h4>
+                        <div class="route-time">1h 12m</div>
+                    </div>
+                    <p>Via coastal road • Scenic • No tolls</p>
+                    <div class="route-details">
+                        <span><i class="fas fa-road"></i> 52.8 km</span>
+                        <span><i class="fas fa-gas-pump"></i> ~15.8 L</span>
+                        <span><i class="fas fa-tree"></i> Better fuel economy</span>
+                    </div>
+                    <button class="btn btn-outline btn-small">
+                        <i class="fas fa-eye"></i>
+                        Preview
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Trip Actions -->
+        <div class="quick-trip-actions">
+            <button class="trip-action-btn primary">
+                <i class="fas fa-play-circle"></i>
+                <span>Start New Trip</span>
+            </button>
+            <button class="trip-action-btn">
+                <i class="fas fa-edit"></i>
+                <span>Log Stop</span>
+            </button>
+            <button class="trip-action-btn">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Report Delay</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="app-dashboard.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="app-trips.html" class="nav-item active">
+            <i class="fas fa-route"></i>
+            <span>Trips</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-map"></i>
+            <span>Map</span>
+        </a>
+        <a href="app-vehicle.html" class="nav-item">
+            <i class="fas fa-car"></i>
+            <span>Vehicle</span>
+        </a>
+        <a href="app-profile.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Connection Status Bar -->
+    <div class="connection-bar connected">
+        <i class="fas fa-wifi"></i>
+        <span>GPS Active • 4 satellites • Accuracy: 5m</span>
+    </div>
+
+    <script src="app-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard • FleetSync Driver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body class="app-body">
+    <!-- Top Navigation Bar -->
+    <nav class="app-nav">
+        <div class="nav-left">
+            <button class="nav-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-title">
+                <h1>Dashboard</h1>
+                <p class="nav-subtitle">Vehicle: <strong>Toyota Camry (V-245)</strong></p>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
+            </button>
+            <button class="nav-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Side Menu (Hidden by default) -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="driver-info">
+                <div class="driver-avatar">AH</div>
+                <div class="driver-details">
+                    <h3>Ahmed Hassan</h3>
+                    <p>Driver ID: DRV-245</p>
+                    <p class="driver-company">TransLogistics Algeria</p>
+                </div>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="menu-items">
+            <a href="app-dashboard.html" class="menu-item active">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="app-trips.html" class="menu-item">
+                <i class="fas fa-route"></i>
+                <span>Trips & Routes</span>
+            </a>
+            <a href="app-vehicle.html" class="menu-item">
+                <i class="fas fa-car"></i>
+                <span>Vehicle Status</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Performance</span>
+            </a>
+            <a href="app-profile.html" class="menu-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-question-circle"></i>
+                <span>Help & Support</span>
+            </a>
+        </div>
+
+        <div class="menu-footer">
+            <div class="connection-status">
+                <div class="status-indicator connected"></div>
+                <span>Connected to Platform</span>
+            </div>
+            <p class="app-version">FleetSync Driver v2.1.4</p>
+        </div>
+    </div>
+
+    <!-- Main App Content -->
+    <main class="app-content">
+        <!-- Status Banner -->
+        <div class="status-banner">
+            <div class="status-content">
+                <div class="status-icon active">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <div class="status-info">
+                    <h3>GPS Tracking Active</h3>
+                    <p>Data syncing every 10 seconds • Last update: 2 min ago</p>
+                </div>
+            </div>
+            <div class="status-actions">
+                <button class="btn btn-small btn-outline">
+                    <i class="fas fa-sync"></i>
+                    Sync Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Current Trip Card -->
+        <div class="card trip-card">
+            <div class="card-header">
+                <h2>Current Trip</h2>
+                <div class="trip-status active">In Progress</div>
+            </div>
+            
+            <div class="trip-info">
+                <div class="trip-locations">
+                    <div class="location">
+                        <div class="location-marker start">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-details">
+                            <h4>Pickup</h4>
+                            <p>Port of Algiers, Zone C</p>
+                            <p class="location-time">08:30 AM • On Time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="route-line">
+                        <div class="route-dots">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="route-distance">
+                            <i class="fas fa-route"></i>
+                            <span>42 km • 1 hr 15 min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location">
+                        <div class="location-marker end">
+                            <i class="fas fa-flag-checkered"></i>
+                        </div>
+                        <div class="location-details">
+                            <h4>Delivery</h4>
+                            <p>Dar El Beida Warehouse</p>
+                            <p class="location-time">ETA 09:45 AM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trip-progress">
+                    <div class="progress-info">
+                        <span>65% Complete</span>
+                        <span>27.3 km / 42 km</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+                
+                <div class="trip-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-directions"></i>
+                        Navigate
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-info-circle"></i>
+                        Details
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-phone"></i>
+                        Call Dispatch
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-value">68</div>
+                    <div class="stat-label">km/h</div>
+                    <div class="stat-subtext">Current Speed</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-gas-pump"></i>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-value">42%</div>
+                    <div class="stat-label">Fuel</div>
+                    <div class="stat-subtext">~150 km range</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-thermometer-half"></i>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-value">89°</div>
+                    <div class="stat-label">Engine</div>
+                    <div class="stat-subtext">Normal</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-value">4.8</div>
+                    <div class="stat-label">Score</div>
+                    <div class="stat-subtext">This week</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Driver Performance -->
+        <div class="card performance-card">
+            <div class="card-header">
+                <h2>Driver Performance</h2>
+                <a href="#" class="view-details">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="performance-metrics">
+                <div class="metric">
+                    <div class="metric-label">
+                        <i class="fas fa-brake-warning"></i>
+                        <span>Hard Braking</span>
+                    </div>
+                    <div class="metric-value good">2</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill good" style="width: 20%;"></div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">
+                        <i class="fas fa-rocket"></i>
+                        <span>Rapid Acceleration</span>
+                    </div>
+                    <div class="metric-value warning">5</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill warning" style="width: 50%;"></div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">
+                        <i class="fas fa-tachometer-alt-fast"></i>
+                        <span>Speeding</span>
+                    </div>
+                    <div class="metric-value good">0</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill good" style="width: 5%;"></div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">
+                        <i class="fas fa-clock"></i>
+                        <span>Idle Time</span>
+                    </div>
+                    <div class="metric-value warning">18 min</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill warning" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-summary">
+                <div class="summary-score">
+                    <div class="score-circle">
+                        <span class="score-value">92</span>
+                        <span class="score-label">Score</span>
+                    </div>
+                    <p>Excellent driving this week</p>
+                </div>
+                <div class="summary-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Tip:</strong> Reduce rapid acceleration to improve fuel efficiency by up to 15%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="card notifications-card">
+            <div class="card-header">
+                <h2>Notifications</h2>
+                <a href="#" class="view-details">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="notifications-list">
+                <div class="notification-item unread">
+                    <div class="notification-icon urgent">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Traffic Alert</h4>
+                        <p>Heavy traffic on Route N5. Consider alternate route via Ben Aknoun.</p>
+                        <span class="notification-time">10 min ago</span>
+                    </div>
+                </div>
+                
+                <div class="notification-item">
+                    <div class="notification-icon info">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Fuel Reminder</h4>
+                        <p>Fuel level at 42%. Recommended refuel within next 150 km.</p>
+                        <span class="notification-time">45 min ago</span>
+                    </div>
+                </div>
+                
+                <div class="notification-item">
+                    <div class="notification-icon success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Trip Completed</h4>
+                        <p>Trip #TR-8921 from Algiers to Blida recorded successfully.</p>
+                        <span class="notification-time">2 hours ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="action-btn">
+                <div class="action-icon">
+                    <i class="fas fa-road"></i>
+                </div>
+                <span>Start Trip</span>
+            </button>
+            
+            <button class="action-btn">
+                <div class="action-icon">
+                    <i class="fas fa-gas-pump"></i>
+                </div>
+                <span>Log Fuel</span>
+            </button>
+            
+            <button class="action-btn">
+                <div class="action-icon">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <span>Report Issue</span>
+            </button>
+            
+            <button class="action-btn">
+                <div class="action-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <span>Live Map</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="app-dashboard.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="app-trips.html" class="nav-item">
+            <i class="fas fa-route"></i>
+            <span>Trips</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-map"></i>
+            <span>Map</span>
+        </a>
+        <a href="app-vehicle.html" class="nav-item">
+            <i class="fas fa-car"></i>
+            <span>Vehicle</span>
+        </a>
+        <a href="app-profile.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Connection Status Bar -->
+    <div class="connection-bar connected">
+        <i class="fas fa-wifi"></i>
+        <span>Connected • 4G • Sending data every 10s</span>
+        <div class="connection-strength">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+
+    <script src="app-script.js"></script>
+</body>
+</html>

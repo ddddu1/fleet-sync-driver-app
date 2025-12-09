@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle • FleetSync Driver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body class="app-body">
+    <!-- Top Navigation Bar -->
+    <nav class="app-nav">
+        <div class="nav-left">
+            <button class="nav-btn" id="menuBtn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="nav-title">
+                <h1>Vehicle Status</h1>
+                <p class="nav-subtitle">Toyota Camry • V-245</p>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn">
+                <i class="fas fa-history"></i>
+            </button>
+            <button class="nav-btn">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main App Content -->
+    <main class="app-content">
+        <!-- Vehicle Overview -->
+        <div class="card vehicle-overview-card">
+            <div class="vehicle-header">
+                <div class="vehicle-image">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="vehicle-info">
+                    <h2>Toyota Camry 2023</h2>
+                    <p>Vehicle ID: <strong>V-245</strong></p>
+                    <p>TransLogistics Algeria • Fleet #ALG-04</p>
+                </div>
+                <div class="vehicle-status">
+                    <div class="status-badge active">
+                        <span class="status-dot"></span>
+                        Active
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vehicle-stats">
+                <div class="vehicle-stat">
+                    <div class="stat-label">Total Distance</div>
+                    <div class="stat-value">45,230 km</div>
+                </div>
+                <div class="vehicle-stat">
+                    <div class="stat-label">Fuel Type</div>
+                    <div class="stat-value">Petrol</div>
+                </div>
+                <div class="vehicle-stat">
+                    <div class="stat-label">Avg Efficiency</div>
+                    <div class="stat-value">12.4 km/L</div>
+                </div>
+                <div class="vehicle-stat">
+                    <div class="stat-label">Service Due</div>
+                    <div class="stat-value warning">1,240 km</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-time Diagnostics -->
+        <div class="card diagnostics-card">
+            <div class="card-header">
+                <h2>Real-time Diagnostics</h2>
+                <div class="last-update">Updated: Just now</div>
+            </div>
+            
+            <div class="diagnostics-grid">
+                <!-- Fuel System -->
+                <div class="diagnostic-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <div class="diag-info">
+                        <h4>Fuel System</h4>
+                        <p>42% remaining</p>
+                    </div>
+                    <div class="diag-status normal">
+                        <div class="status-bar">
+                            <div class="status-fill" style="width: 42%;"></div>
+                        </div>
+                        <span>Normal</span>
+                    </div>
+                </div>
+                
+                <!-- Engine -->
+                <div class="diagnostic-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="diag-info">
+                        <h4>Engine</h4>
+                        <p>89°C • 2,850 RPM</p>
+                    </div>
+                    <div class="diag-status normal">
+                        <div class="status-bar">
+                            <div class="status-fill" style="width: 75%;"></div>
+                        </div>
+                        <span>Optimal</span>
+                    </div>
+                </div>
+                
+                <!-- Battery -->
+                <div class="diagnostic-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <div class="diag-info">
+                        <h4>Battery</h4>
+                        <p>12.6V • 87% charge</p>
+                    </div>
+                    <div class="diag-status warning">
+                        <div class="status-bar">
+                            <div class="status-fill" style="width: 87%; background-color: #f59e0b;"></div>
+                        </div>
+                        <span>Check soon</span>
+                    </div>
+                </div>
+                
+                <!-- Tires -->
+                <div class="diagnostic-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-tire-pressure-warning"></i>
+                    </div>
+                    <div class="diag-info">
+                        <h4>Tire Pressure</h4>
+                        <p>Front: 32 PSI • Rear: 34 PSI</p>
+                    </div>
+                    <div class="diag-status normal">
+                        <div class="status-bar">
+                            <div class="status-fill" style="width: 85%;"></div>
+                        </div>
+                        <span>Good</span>
+                    </div>
+                </div>
+                
+                <!-- Brakes -->
+                <div class="diagnostic-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-brake-warning"></i>
+                    </div>
+                    <div class="diag-info">
+                        <h4>Brake System</h4>
+                        <p>Pad wear: 65% remaining</p>
+                    </div>
+                    <div class="diag-status normal">
+                        <div class="status-bar">
+                            <div class="status-fill" style="width: 65%;"></div>
+                        </div>
+                        <span>Good</span>
+                    </div>
+                </div>
+                
+                <!-- Oil -->
+                <div class="diagnostic-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <div class="diag-info">
+                        <h4>Engine Oil</h4>
+                        <p>Level: Good • Next change: 3,200 km</p>
+                    </div>
+                    <div class="diag-status normal">
+                        <div class="status-bar">
+                            <div class="status-fill" style="width: 60%;"></div>
+                        </div>
+                        <span>Normal</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="diagnostics-actions">
+                <button class="btn btn-outline">
+                    <i class="fas fa-chart-line"></i>
+                    View Trends
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-file-export"></i>
+                    Export Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Maintenance Schedule -->
+        <div class="card maintenance-card">
+            <div class="card-header">
+                <h2>Maintenance Schedule</h2>
+                <a href="#" class="view-details">Full Schedule <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="maintenance-list">
+                <div class="maintenance-item overdue">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="maintenance-details">
+                        <h4>Oil Change</h4>
+                        <p>Overdue by 240 km • Recommended immediately</p>
+                        <div class="maintenance-meta">
+                            <span><i class="fas fa-wrench"></i> Quick service</span>
+                            <span><i class="fas fa-clock"></i> ~30 minutes</span>
+                        </div>
+                    </div>
+                    <div class="maintenance-actions">
+                        <button class="btn btn-small btn-warning">
+                            Schedule
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="maintenance-item upcoming">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="maintenance-details">
+                        <h4>Tire Rotation</h4>
+                        <p>Due in 1,240 km • Estimated: Dec 28, 2025</p>
+                        <div class="maintenance-meta">
+                            <span><i class="fas fa-tools"></i> Garage service</span>
+                            <span><i class="fas fa-clock"></i> ~1 hour</span>
+                        </div>
+                    </div>
+                    <div class="maintenance-actions">
+                        <button class="btn btn-small btn-outline">
+                            Remind Me
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="maintenance-item scheduled">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="maintenance-details">
+                        <h4>Brake Inspection</h4>
+                        <p>Scheduled for Dec 20, 2025 • 10:00 AM</p>
+                        <div class="maintenance-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Main Garage</span>
+                            <span><i class="fas fa-user"></i> Technician: Ali</span>
+                        </div>
+                    </div>
+                    <div class="maintenance-actions">
+                        <button class="btn btn-small btn-outline">
+                            Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Issue Reporting -->
+        <div class="card issue-reporting-card">
+            <div class="card-header">
+                <h2>Report Vehicle Issue</h2>
+                <i class="fas fa-question-circle"></i>
+            </div>
+            
+            <div class="issue-categories">
+                <button class="issue-category">
+                    <div class="category-icon">
+                        <i class="fas fa-engine-warning"></i>
+                    </div>
+                    <span>Engine Problem</span>
+                </button>
+                
+                <button class="issue-category">
+                    <div class="category-icon">
+                        <i class="fas fa-tire-flat"></i>
+                    </div>
+                    <span>Flat Tire</span>
+                </button>
+                
+                <button class="issue-category">
+                    <div class="category-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <span>Accident</span>
+                </button>
+                
+                <button class="issue-category">
+                    <div class="category-icon">
+                        <i class="fas fa-battery-empty"></i>
+                    </div>
+                    <span>Battery Dead</span>
+                </button>
+                
+                <button class="issue-category">
+                    <div class="category-icon">
+                        <i class="fas fa-gas-pump-slash"></i>
+                    </div>
+                    <span>Fuel Issue</span>
+                </button>
+                
+                <button class="issue-category">
+                    <div class="category-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <span>Other Issue</span>
+                </button>
+            </div>
+            
+            <div class="emergency-section">
+                <div class="emergency-info">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h4>Emergency Assistance</h4>
+                        <p>24/7 fleet support available</p>
+                    </div>
+                </div>
+                <button class="btn btn-emergency">
+                    <i class="fas fa-phone-alt"></i>
+                    Call Fleet Manager
+                </button>
+            </div>
+        </div>
+
+        <!-- Fuel Logging -->
+        <div class="card fuel-logging-card">
+            <div class="card-header">
+                <h2>Fuel Consumption</h2>
+                <a href="#" class="view-details">History <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="fuel-stats">
+                <div class="fuel-stat">
+                    <div class="stat-label">Today's Usage</div>
+                    <div class="stat-value">24.5 L</div>
+                    <div class="stat-trend positive">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>8% better than average</span>
+                    </div>
+                </div>
+                
+                <div class="fuel-stat">
+                    <div class="stat-label">Avg Efficiency</div>
+                    <div class="stat-value">12.4 km/L</div>
+                    <div class="stat-trend positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+0.3 km/L this week</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fuel-logging">
+                <h4>Log Fuel Transaction</h4>
+                <div class="fuel-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Fuel Amount (L)</label>
+                            <input type="number" placeholder="Enter liters" value="40">
+                        </div>
+                        <div class="form-group">
+                            <label>Cost (DZD)</label>
+                            <input type="number" placeholder="Enter cost" value="5600">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Station Name</label>
+                        <input type="text" placeholder="E.g., Naftal Station" value="Naftal Hydra">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-camera"></i>
+                            Add Receipt
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            Save Log
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="app-dashboard.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="app-trips.html" class="nav-item">
+            <i class="fas fa-route"></i>
+            <span>Trips</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-map"></i>
+            <span>Map</span>
+        </a>
+        <a href="app-vehicle.html" class="nav-item active">
+            <i class="fas fa-car"></i>
+            <span>Vehicle</span>
+        </a>
+        <a href="app-profile.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Connection Status Bar -->
+    <div class="connection-bar connected">
+        <i class="fas fa-car"></i>
+        <span>Vehicle data syncing • IoV Device: Connected</span>
+        <div class="battery-indicator">
+            <i class="fas fa-battery-three-quarters"></i>
+            <span>87%</span>
+        </div>
+    </div>
+
+    <script src="app-script.js"></script>
+</body>
+</html>

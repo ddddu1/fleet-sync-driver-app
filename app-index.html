@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetSync Driver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body class="login-page">
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-logo">
+            <i class="fas fa-satellite-dish"></i>
+            <h1>FleetSync</h1>
+            <p>Driver Connect</p>
+        </div>
+        <div class="splash-loading">
+            <div class="loading-spinner"></div>
+            <p>Connecting to platform...</p>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="login-container" id="loginContainer" style="display: none;">
+        <div class="login-header">
+            <div class="login-logo">
+                <i class="fas fa-satellite-dish"></i>
+                <h1>FleetSync</h1>
+                <p>Driver Portal</p>
+            </div>
+            <p class="login-tagline">Connect your vehicle to the fleet platform</p>
+        </div>
+
+        <div class="login-form">
+            <div class="form-group">
+                <label for="driverId">
+                    <i class="fas fa-id-card"></i>
+                    Driver ID
+                </label>
+                <input type="text" id="driverId" placeholder="Enter your driver ID">
+            </div>
+
+            <div class="form-group">
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                    Password
+                </label>
+                <input type="password" id="password" placeholder="Enter your password">
+                <button class="show-password" type="button">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+
+            <div class="form-options">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="rememberMe">
+                    <span class="checkmark"></span>
+                    Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="loginBtn">
+                <i class="fas fa-sign-in-alt"></i>
+                Sign In
+            </button>
+
+            <div class="login-divider">
+                <span>or</span>
+            </div>
+
+            <button class="btn btn-outline btn-block">
+                <i class="fas fa-qrcode"></i>
+                Scan QR Code
+            </button>
+
+            <div class="login-footer">
+                <p>Need help? <a href="#">Contact Fleet Manager</a></p>
+                <p class="app-version">v2.1.4 • Last updated: Dec 9, 2025</p>
+            </div>
+        </div>
+
+        <!-- Demo Login Notice -->
+        <div class="demo-login-notice">
+            <p><strong>Demo Mode:</strong> Use any credentials to login</p>
+            <p class="demo-hint">Try: Driver ID: <code>DRV-245</code> • Password: <code>demo123</code></p>
+        </div>
+    </div>
+
+    <!-- Notification Toast (hidden by default) -->
+    <div class="notification-toast" id="loginToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Login successful! Redirecting...</span>
+        </div>
+    </div>
+
+    <script src="app-script.js"></script>
+</body>
+</html>
