@@ -40,16 +40,6 @@
 > - Password: `demo123`  
 > *(Just click "Sign In" to login)*
 
-## 📸 Screenshots
-
-| Login Screen | Dashboard | Trip Management |
-|--------------|-----------|-----------------|
-| ![Login](https://via.placeholder.com/300x600/2563eb/ffffff?text=Login+Screen) | ![Dashboard](https://via.placeholder.com/300x600/10b981/ffffff?text=Dashboard) | ![Trips](https://via.placeholder.com/300x600/f59e0b/ffffff?text=Trip+Management) |
-
-| Vehicle Diagnostics | Driver Profile | Mobile View |
-|---------------------|----------------|-------------|
-| ![Vehicle](https://via.placeholder.com/300x600/3b82f6/ffffff?text=Vehicle+Diag) | ![Profile](https://via.placeholder.com/300x600/8b5cf6/ffffff?text=Driver+Profile) | ![Mobile](https://via.placeholder.com/300x600/64748b/ffffff?text=Mobile+View) |
-
 ## 🚀 Features
 
 ### 📍 **Core Functionality**
