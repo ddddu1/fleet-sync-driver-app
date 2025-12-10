@@ -1,0 +1,35 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/app-index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/app-dashboard.html"
+    },
+    {
+      "source": "/profile",
+      "destination": "/app-profile.html"
+    },
+    {
+      "source": "/trips",
+      "destination": "/app-trips.html"
+    },
+    {
+      "source": "/vehicle",
+      "destination": "/app-vehicle.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
+}
